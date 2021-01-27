@@ -1,0 +1,334 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+.grey-text {
+  color: #828282;
+}
+
+.container {
+  overflow: hidden;
+  font-size: 16px;
+  max-width: 1920px;
+  margin: auto;
+  background: #f6f6fc;
+  color: #000070;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 0.2fr 3.5fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas: "sidebar nav" "sidebar main";
+}
+
+nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+}
+
+nav .navbar__left #deposit {
+  border: none;
+  outline: none;
+  color: #000070;
+}
+
+nav .navbar__left .btn {
+  border-radius: 30px;
+  margin: 0 0.5em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+nav .navbar__left .btn-primary {
+  background: #000070;
+  color: #ffffff;
+}
+
+nav .navbar__left .btn-light {
+  border: 1px solid #000070;
+}
+
+nav .navbar__left .btn-info {
+  background: #00b9cd;
+  color: #ffffff;
+}
+
+nav .navbar__right {
+  display: flex;
+  align-items: center;
+}
+
+nav .navbar__right .user_column {
+  display: flex;
+  align-items: center;
+}
+
+nav .navbar__right .user_column .user_details {
+  text-align: right;
+}
+
+nav .navbar__right .user_column .user_icon {
+  margin: 0 10px;
+}
+
+nav .navbar__right .user_column #drop-down {
+  border: none;
+  outline: none;
+}
+
+nav .navbar__right .icon_column {
+  margin: 0 10px;
+}
+
+nav .navbar__right .icon_column img {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #000070;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+}
+
+.sidebar .logo-container {
+  padding: 1em 0;
+}
+
+.sidebar .sidebar__icons {
+  flex: 3;
+}
+
+.sidebar .sidebar__icons img {
+  display: block;
+  margin: 3em 0;
+}
+
+.sidebar .sidebar__logout {
+  border: 1px solid red;
+}
+
+.sidebar .sidebar__logout img {
+  display: block;
+  margin: 3em 0;
+}
+
+main {
+  padding: 20px 30px;
+  grid-area: main;
+}
+
+.top {
+  grid-area: top;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 2px;
+  gap: 20px;
+}
+
+.top .welcome {
+  background: #ffffff;
+  box-shadow: 0px 2px 10px 0px #cfcfcf 25%;
+  border-radius: 10px;
+  padding: 1em 0 0 1em;
+  min-height: 100px;
+}
+
+.top .welcome p {
+  margin-top: 0.5em;
+}
+
+.top .life {
+  color: white;
+  padding: 1em 0 0 1em;
+  border-radius: 10px;
+  background: linear-gradient(270.73deg, rgba(0, 0, 112, 0.62) 0.19%, rgba(0, 0, 112, 0.146497) 78.89%, rgba(0, 0, 112, 0) 99.53%);
+  background-image: url(../src/life.png);
+}
+
+.top .life h2 {
+  margin-bottom: 0.2em;
+}
+
+.top .life .life-crypto-text {
+  margin-top: 0.2em;
+  color: #ffb800;
+}
+
+.transactions {
+  grid-area: middle;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.transactions .transaction-card {
+  margin: 10px 5px;
+  min-height: 130px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.transactions .transaction-card .transaction__text__section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 0 1em;
+}
+
+.transactions .transaction-card .transaction__text__section h3 {
+  font-size: 2rem;
+}
+
+.transactions .transaction-card .transaction__text__section p {
+  font-size: 1.5rem;
+  color: #9595be;
+}
+
+.transactions .transaction-card .transaction__image__section .transaction-image {
+  max-height: 80px;
+  padding: 0 10px 0 0;
+}
+
+.bottom {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "services services wallet" "services services chart" "recent recent chart" "recent recent empty" "recent recent empty";
+}
+
+.bottom .services {
+  grid-area: services;
+  background: #ffffff;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.bottom .services .asset-cards {
+  margin: 1em;
+  background: white;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 2px 10px rgba(207, 207, 207, 0.25);
+  border-radius: 10px;
+}
+
+.bottom .services .asset-cards .asset-image {
+  height: 80px;
+  margin-bottom: 5px;
+}
+
+.bottom .services .asset-cards .asset-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom .services .asset-cards .asset-info p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.bottom .wallet {
+  grid-area: wallet;
+}
+
+.bottom .recent {
+  grid-area: recent;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.bottom .recent h3 {
+  font-size: 20px;
+  margin: 1em;
+}
+
+.bottom .recent table {
+  width: 100%;
+  height: 60%;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.bottom .recent table tr:nth-child(odd) {
+  background: rgba(0, 0, 112, 0.05);
+}
+
+.bottom .recent table .btn {
+  font-size: 10px;
+  border-radius: 15px;
+  margin: 0 0.5em;
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.bottom .recent .more-container {
+  align-self: center;
+}
+
+.bottom .recent .btn-more {
+  border-radius: 30px;
+  margin: 1em 0;
+  padding: 5px 20px;
+  text-decoration: none;
+  background: #000070;
+  color: #ffffff;
+}
+
+.bottom .crypto-charts {
+  grid-area: chart;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFFFFF;
+  padding: 10px 15px;
+}
+
+.bottom .crypto-charts .charts-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bottom .crypto-charts .chart-coin-container {
+  border-bottom: 1px solid #346e91;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom .empty {
+  grid-area: empty;
+}
+/*# sourceMappingURL=body.css.map */
